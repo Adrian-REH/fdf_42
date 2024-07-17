@@ -6,11 +6,11 @@
 /*   By: adherrer <adherrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 07:23:45 by adherrer          #+#    #+#             */
-/*   Updated: 2024/07/13 10:21:02 by adherrer         ###   ########.fr       */
+/*   Updated: 2024/07/14 00:05:50 by adherrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../inc/../inc/utils_map.h"
+#include "../inc/../inc/utils_map.h"
 
 void	softened(t_point *proyect, float divisor, int len)
 {
@@ -81,14 +81,16 @@ void	dbl_free(char **ptr)
 	free (ptr);
 }
 
-int	load_points(char *line, t_map *map, int numline, int fin)
+/*
+*	load points and determinates the max and min value of
+*	z
+*/
+int	load_points(char *line, t_map *map, int numline)
 {
 	char		**splited;
 	int			i;
 	static int	point_index = 0;
 
-	if (fin == 1)
-		return ((point_index = 0), 0);
 	splited = ((i = 0), ft_split(line, ' '));
 	while (splited[i] && splited[i][0] != '\n')
 	{

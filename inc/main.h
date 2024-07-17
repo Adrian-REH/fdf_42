@@ -6,12 +6,12 @@
 /*   By: adherrer <adherrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 12:07:10 by adherrer          #+#    #+#             */
-/*   Updated: 2024/07/13 10:18:27 by adherrer         ###   ########.fr       */
+/*   Updated: 2024/07/13 13:17:21 by adherrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_C
-# define MAIN_C
+#ifndef MAIN_H
+# define MAIN_H
 # include "../lib/minilibx-linux/mlx.h"
 # include "../inc/mathmatrix.h"
 # include "../inc/utils_color.h"
@@ -32,4 +32,5 @@
 
 int	draw_line(t_meta *meta, t_point start, t_point end);
 int	draw_map(t_meta *meta);
+
 #endif

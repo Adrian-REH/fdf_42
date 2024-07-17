@@ -6,11 +6,11 @@
 /*   By: adherrer <adherrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 08:46:24 by adherrer          #+#    #+#             */
-/*   Updated: 2024/07/13 10:21:02 by adherrer         ###   ########.fr       */
+/*   Updated: 2024/07/13 22:20:01 by adherrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../inc/../inc/utils_matrix.h"
+#include "../inc/../inc/utils_matrix.h"
 
 void	matrix_init(float (*matrix)[3])
 {
@@ -66,7 +66,6 @@ t_point	mul_mat(float matrix[3][3], t_point point)
 	return (result);
 }
 
-//UTILS
 void	translate_and_project_map(t_point *points, t_map map, t_map base, \
 float proyect_matrix[3][3])
 {

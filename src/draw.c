@@ -6,11 +6,11 @@
 /*   By: adherrer <adherrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 23:55:33 by adherrer          #+#    #+#             */
-/*   Updated: 2024/07/13 10:21:02 by adherrer         ###   ########.fr       */
+/*   Updated: 2024/07/13 22:32:04 by adherrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../inc/draw.h"
+#include "../inc/draw.h"
 
 int	my_putpixel(t_meta *meta, t_point pixel)
 {
@@ -50,8 +50,6 @@ int	draw_line(t_meta *meta, t_point start, t_point end)
 	while (pixels > 0)
 	{
 		pixel.color = gradient(start.color, end.color, len, len - pixels);
-		if (meta->b_backcolor)
-			pixel.color = get_color(meta, meta->map[0].colors.backcolor);
 		my_putpixel(meta, pixel);
 		pixel.axis[X] += delta.axis[X];
 		pixel.axis[Y] += delta.axis[Y];
@@ -109,7 +107,7 @@ int	draw_map(t_meta *meta)
 	meta->bitmap.img = mlx_new_image(meta->vars.mlx, WINX, WINY);
 	meta->bitmap.buffer = mlx_get_data_addr(meta->bitmap.img, \
 	&meta->bitmap.bitxpixel, &meta->bitmap.lines, &meta->bitmap.endian);
-	meta->b_backcolor = ((n_map = 0), (0));
+	n_map = 0;
 	if (meta->map[0].b_stars)
 		paint_stars(meta);
 	while (meta->n_maps >= n_map && (meta->map[n_map].visible == 1))

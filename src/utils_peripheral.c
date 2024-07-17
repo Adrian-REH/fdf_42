@@ -6,11 +6,11 @@
 /*   By: adherrer <adherrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 08:25:25 by adherrer          #+#    #+#             */
-/*   Updated: 2024/07/13 10:21:02 by adherrer         ###   ########.fr       */
+/*   Updated: 2024/07/13 13:14:18 by adherrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../inc/../inc/utils_peripheral.h"
+#include "../inc/../inc/utils_peripheral.h"
 
 void	update_map_angles_and_positions(int x, int y, t_meta *meta)
 {

@@ -6,11 +6,11 @@
 /*   By: adherrer <adherrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 07:53:22 by adherrer          #+#    #+#             */
-/*   Updated: 2024/07/13 10:21:02 by adherrer         ###   ########.fr       */
+/*   Updated: 2024/07/13 13:14:06 by adherrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../inc/../inc/utils_draw.h"
+#include "../inc/../inc/utils_draw.h"
 
 /*
 *	Auxiliar function to draw a K

@@ -6,11 +6,11 @@
 /*   By: adherrer <adherrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 12:15:35 by adherrer          #+#    #+#             */
-/*   Updated: 2024/07/13 10:21:02 by adherrer         ###   ########.fr       */
+/*   Updated: 2024/07/17 12:17:54 by adherrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../inc/../inc/positions.h"
+#include "../inc/../inc/positions.h"
 
 void	config_g_position(t_map *map)
 {
@@ -62,21 +62,21 @@ void	config_tr_position(t_map *map)
 		map[i].b_geo = ((map[i].b_cil = 1), (map[i].visible = 1), (0));
 		map[i].scale = (0.15 * (i * i) - (0.65 * i) + 1);
 		map[i].source.axis[X] = map[0].source.axis[X] + \
-		(map[0].limits.axis[X]) * ((1.958333333 * (i * i)) - (3.083333333 * i));
+		(map[0].limits.axis[X]) * ((1.0247 * (i * i)) - (1.5494 * i));
 		if (i)
 			map[i].source.axis[Y] = map[0].source.axis[Y] - \
-			map[0].limits.axis[X] / 2;
+			map[0].limits.axis[X] / 4;
 		if (i > 2 && i <= 5)
 		{
 			map[i].b_geo = ((map[i].b_cil = 0), (map[i].scale = -2 + i), (1));
 			map[i].source.axis[Y] = map[0].source.axis[Y] - \
-			map[0].limits.axis[Y] / 3.5;
+			map[i].limits.axis[Y] / 3.5;
 			map[i].source.axis[X] = map[0].source.axis[X] + \
 			(map[0].limits.axis[X]) * (-0.25 * (i - 3) + 0.5);
 		}
-		map[i].min_scale = map[i].scale;
-		i++;
+		i += ((map[i].min_scale = map[i].scale), 1);
 	}
+	map[1].ang_base[Z] = ((map[2].ang_base[Z] = 45), -45);
 	map[4].source.axis[X] = map[0].source.axis[X] - \
 	(map[0].limits.axis[X]) / 3.5;
 }

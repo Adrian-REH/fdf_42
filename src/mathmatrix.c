@@ -6,22 +6,22 @@
 /*   By: adherrer <adherrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 13:06:31 by adherrer          #+#    #+#             */
-/*   Updated: 2024/07/13 10:21:02 by adherrer         ###   ########.fr       */
+/*   Updated: 2024/07/17 11:27:48 by adherrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../inc/../inc/mathmatrix.h"
+#include "../inc/../inc/mathmatrix.h"
 
 /*
 *   Calculate len "points" of the array with the "ang" rotation in X axis
 *   and store in "proyection" array.
 */
-void	rotate_x(t_point *points, t_map map, t_map base)
+void	rotate_x_base(t_point *points, t_map map, t_map base, float ang)
 {
 	float	rad;
 	float	proyect_matrix[3][3];
 
-	rad = (map.ang[X]) * (3.14159265358979323846) / 180;
+	rad = (ang) * (3.14159265358979323846) / 180;
 	matrix_init(proyect_matrix);
 	proyect_matrix[0][0] = 1;
 	proyect_matrix[1][1] = cos(rad);
@@ -35,12 +35,12 @@ void	rotate_x(t_point *points, t_map map, t_map base)
 *   Calculate len "points" of the array with the "ang" rotation in Y axis
 *   and store in "proyection" array.
 */
-void	rotate_y(t_point *points, t_map map, t_map base)
+void	rotate_y_base(t_point *points, t_map map, t_map base, float ang)
 {
 	float	rad;
 	float	proyect_matrix[3][3];
 
-	rad = (map.ang[Y]) * (M_PI) / 180;
+	rad = (ang) * (M_PI) / 180;
 	matrix_init(proyect_matrix);
 	proyect_matrix[0][0] = cos(rad);
 	proyect_matrix[0][2] = sin(rad);
@@ -54,12 +54,12 @@ void	rotate_y(t_point *points, t_map map, t_map base)
 *   Calculate len "points" of the array with the "ang" rotation in Z axis
 *   and store in "proyection" array.
 */
-void	rotate_z(t_point *points, t_map map, t_map base)
+void	rotate_z_base(t_point *points, t_map map, t_map base, float ang)
 {
 	float	rad;
 	float	proyect_matrix[3][3];
 
-	rad = (map.ang[Z]) * (M_PI) / 180;
+	rad = (ang) * (M_PI) / 180;
 	matrix_init(proyect_matrix);
 	proyect_matrix[0][0] = cos(rad);
 	proyect_matrix[0][1] = -sin(rad);

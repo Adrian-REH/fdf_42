@@ -6,7 +6,7 @@
 /*   By: adherrer <adherrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 13:39:35 by adherrer          #+#    #+#             */
-/*   Updated: 2024/07/13 10:23:10 by adherrer         ###   ########.fr       */
+/*   Updated: 2024/07/14 00:05:34 by adherrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ void	spherize(t_map *map, t_point *points)
 	}
 }
 
+/*
+*	
+*	@(steps_x,steps_y) son los puntos de la circunferencia
+*	@(map->limits.axis[Y] / 2)) * steps_y - 0.5 * steps_y: Es para suavizar
+*/
 void	go_polar(t_map *map)
 {
 	int		i;
@@ -37,12 +42,12 @@ void	go_polar(t_map *map)
 	float	steps_y;
 
 	steps_x = (M_PI * 2) / (map->limits.axis[X] - 1);
-	steps_y = M_PI / (map->limits.axis[Y]);
+	steps_y = M_PI / (map->limits.axis[Y] - 2);
 	map->radius = map->limits.axis[X] / (M_PI * 2);
 	i = 0;
 	while (i < map->len)
 	{
-		map->points[i].polar[1][LONG] = -(map->points[i].axis[X]) * steps_x;
+		map->points[i].polar[1][LONG] = (map->points[i].axis[X]) * steps_x;
 		if (map->points[i].axis[Y] > 0)
 			map->points[i].polar[1][LAT] = ((map->points[i].axis[Y]) + \
 			(map->limits.axis[Y] / 2)) * steps_y - 0.5 * steps_y;
@@ -78,7 +83,7 @@ void	go_cylindrical(t_map *map)
 	i = 0;
 	while (i < map->len)
 	{
-		map->points[i].polar[0][LONG] = i * angle_step;
+		map->points[i].polar[0][LONG] = -(map->points[i].axis[X]) * angle_step;
 		map->points[i].polar[0][LAT] = map->radius;
 		i++;
 	}

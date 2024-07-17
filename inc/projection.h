@@ -6,7 +6,7 @@
 /*   By: adherrer <adherrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 08:55:15 by adherrer          #+#    #+#             */
-/*   Updated: 2024/07/13 10:18:52 by adherrer         ###   ########.fr       */
+/*   Updated: 2024/07/17 12:55:37 by adherrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 # include "../inc/main.h"
 
 void	isometric(t_map *map);
-void	orto_proyection(t_point *points, t_point *proyection, int len);
+void	parallel(t_map *map);
 
 #endif

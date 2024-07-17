@@ -6,11 +6,11 @@
 /*   By: adherrer <adherrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 07:41:25 by adherrer          #+#    #+#             */
-/*   Updated: 2024/07/13 10:21:02 by adherrer         ###   ########.fr       */
+/*   Updated: 2024/07/13 23:12:08 by adherrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../inc/../inc/utils_color.h"
+#include "../inc/../inc/utils_color.h"
 
 int	ft_round(double num)
 {
@@ -24,8 +24,6 @@ int	ft_round(double num)
 
 void	map_ini_colors(t_map *map)
 {
-	map->colors.backcolor = BACK_COLOR;
-	map->colors.menucolor = MENU_COLOR;
 	map->colors.bottomcolor = BOTTOM_COLOR;
 	map->colors.groundcolor = GROUND_COLOR;
 	map->colors.topcolor = TOP_COLOR;
@@ -51,13 +49,10 @@ void	colorize(t_map *map)
 {
 	int	i;
 
-	i = 0;
-	while (i < map->len)
-	{
+	i = -1;
+	while (++i < map->len)
 		load_color((int)map->limits.axis[Z], map->zmin, \
 		&map->points[i], map->colors);
-		i++;
-	}
 }
 
 int	gradient(int startcolor, int endcolor, int len, int pix)

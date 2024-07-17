@@ -6,7 +6,7 @@
 /*   By: adherrer <adherrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 13:04:43 by adherrer          #+#    #+#             */
-/*   Updated: 2024/07/13 10:18:43 by adherrer         ###   ########.fr       */
+/*   Updated: 2024/07/17 11:25:12 by adherrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 # include "../lib/libft/libft.h"
 
 t_point	mul_mat(float matrix[3][3], t_point point);
-void	rotate_x(t_point *points, t_map map, t_map base);
-void	rotate_y(t_point *points, t_map map, t_map base);
-void	rotate_z(t_point *points, t_map map, t_map base);
+void	rotate_x_base(t_point *points, t_map map, t_map base, float ang);
+void	rotate_y_base(t_point *points, t_map map, t_map base, float ang);
+void	rotate_z_base(t_point *points, t_map map, t_map base, float ang);
 void	orto_proyection(t_point *points, t_point *proyection, int len);
 void	traslate_o(t_point *points, t_point move, t_map map);
 void	traslate(t_point *points, t_point move, t_map map);

@@ -6,11 +6,11 @@
 /*   By: adherrer <adherrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 23:57:58 by adherrer          #+#    #+#             */
-/*   Updated: 2024/07/13 10:21:02 by adherrer         ###   ########.fr       */
+/*   Updated: 2024/07/13 21:04:56 by adherrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"../inc/main.h"
+#include "../inc/main.h"
 
 void	set_color(char *buffer, int endian, int color, int alpha)
 {
@@ -38,7 +38,7 @@ int	get_color(t_meta *meta, int color)
 }
 
 /* 
-*	Colorize all the points of the map
+*	Carga el color
 */
 void	load_color(int max, int min, t_point *point, t_colors	colors)
 {
